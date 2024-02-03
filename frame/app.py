@@ -26,22 +26,10 @@ class PageHome:
 
 class PageNext:
     def view(self, action: Action, result: ActionResult):
-        return SvgImageView.from_string(SvgTemplate("PageNext", "hello"))
+        return SvgTemplate("foo.svg", title="PageNext", content="hello")
 
     def btn_prev(self, action: Action):
         return "PageHome"
 
     def btn_refresh(self, action: Action):
         return "PageNext"
-
-
-def SvgTemplate(title, content):
-    return f"""<svg width="640" height="336" xmlns="http://www.w3.org/2000/svg">
-  <foreignObject width="100%" height="100%">
-    <body xmlns="http://www.w3.org/1999/xhtml">
-      <h1>{title}</h1>
-      <p>{content}</p>
-    </body>
-  </foreignObject>
-</svg>
-"""
