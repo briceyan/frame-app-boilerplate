@@ -1,2 +1,2 @@
 Flask==3.0.1
-sufficient==0.1.1
+sufficient==0.1.2
