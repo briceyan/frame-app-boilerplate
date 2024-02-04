@@ -14,19 +14,21 @@ class PageHome:
         return SvgFile("home.svg")
 
     def btn_normal_button(self, action: Action):
-        return "PageNext"
+        result = ActionResult(title="PageNext", content=action.input_text)
+        return "PageNext", result
 
     def goto_redirect_button(self, action: Action):
         return "https://github.com/briceyan/frame-app-boilerplate"
 
-    def input_input_text(self, action: Action):
+    def input_input_text(self):
         # wip
         pass
 
 
 class PageNext:
     def view(self, action: Action, result: ActionResult):
-        return SvgTemplate("foo.svg", title="PageNext", content="hello")
+        args = ActionResult(title="PageNext", content="hello world")
+        return SvgTemplate("foo.svg", args)
 
     def btn_prev(self, action: Action):
         return "PageHome"
